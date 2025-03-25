@@ -24,3 +24,23 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+
+const gallery = document.querySelector(".gallery")
+
+
+// const photoGallery = images.map(({ url, alt }) => (`<li class ="gallery-item"><img src= "${url}" alt = "${alt}" class="gallery-img"></img></li>`)).join("")
+// gallery.insertAdjacentHTML("beforeend", photoGallery)
+
+
+
+images.forEach(({ url, alt }) => {
+  const li = document.createElement("li")
+  li.classList.add("gallery-item")
+  const img = document.createElement("img")
+  img.src = url;
+  img.alt = alt;
+  img.classList.add("gallery-img")
+  li.append(img)
+  gallery.append(li)
+})
